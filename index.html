@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- <link rel="stylesheet" href="../css/dialog-anim.css"/> 样式已打包进js-->
+</head>
+<body>
+<button data-event="test1">弹窗动画一</button>
+<button data-event="test2">弹窗动画二</button>
+<button data-event="test3">弹窗动画三</button>
+<button data-event="test4">弹窗动画四</button>
+<button data-event="test5">弹窗动画五</button>
+<button data-event="test6">弹窗动画六</button>
+<button data-event="test7">弹窗动画七</button>
+<script src="./js/jquery-1.10.2.js"></script>
+<script src="./js/dialog.js"></script>
+<script>
+    $('button').each(function (idx) {
+        $(this).on('click', function () {
+            var d = dialog({
+                title: '消息',
+                content: '风吹起的青色衣衫，夕阳里的温暖容颜，你比以前更加美丽，像盛开的花<br>——许巍《难忘的一天》',
+                okValue: '确 定',
+                anim: idx,
+                ok: function () {
+                    return true
+                },
+                cancelValue: '取消',
+                cancel: function () {
+
+                }
+            });
+            d.show();
+        })
+    });
+</script>
+</body>
+</html>
